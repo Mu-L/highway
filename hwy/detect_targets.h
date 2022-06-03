@@ -88,7 +88,8 @@
 #define HWY_HIGHEST_TARGET_BIT_PPC 20
 
 // 0x200000, 0x400000 reserved
-#define HWY_WASM2 0x800000  // Experimental
+#define HWY_WASM_EMU256 0x800000  // Experimental
+#define HWY_WASM2 HWY_WASM_EMU256  // DEPRECATED old name for compatibility
 #define HWY_WASM 0x1000000
 
 #define HWY_HIGHEST_TARGET_BIT_WASM 24
@@ -175,7 +176,7 @@
 
 #if HWY_ARCH_WASM && defined(__wasm_simd128__)
 #if defined(HWY_WANT_WASM2)
-#define HWY_BASELINE_WASM HWY_WASM2
+#define HWY_BASELINE_WASM HWY_WASM_EMU256
 #else
 #define HWY_BASELINE_WASM HWY_WASM
 #endif  // HWY_WANT_WASM2

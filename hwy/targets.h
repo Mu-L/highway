@@ -109,6 +109,8 @@ static inline HWY_MAYBE_UNUSED const char* TargetName(uint32_t target) {
 #if HWY_ARCH_WASM
     case HWY_WASM:
       return "Wasm";
+    case HWY_WASM_EMU256:
+      return "Wasm2";
 #endif
 
 #if HWY_ARCH_RVV
